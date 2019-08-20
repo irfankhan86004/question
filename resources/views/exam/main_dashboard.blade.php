@@ -10,6 +10,19 @@
 @stop
 
 @section('content')
+<style>
+.exam_button {
+    color: #fff;
+    background-color: #232e6e;
+    border-color: #232e6e;
+}
+
+.exam_button:hover {
+    color: #fff;
+    background-color: #232e6e;
+    border-color: #232e6e;
+}
+</style>
 <link rel="stylesheet" href="<?php echo asset('assets/sweetalert/css/sweetalert.css')?>" type="text/css"> 
 <div class="question-list">
 
@@ -101,6 +114,7 @@
 						</table>
 					</div>
 					<h4 class="card-title">Activity Total: {{\Vanguard\Helpers\Helper::userAllScore()}}</h3>
+					<h5 class="card-title"><a href='{{ route('exam.questions.certification')}}' class="btn exam_button" >Get Certificate</a></h3>
 				</div>
 			</div>
 		</div>

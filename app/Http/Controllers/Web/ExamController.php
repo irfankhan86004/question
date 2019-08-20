@@ -55,6 +55,21 @@ class ExamController extends Controller
 
 	public function certification()
     {
+		$questionsCount = Questions::count();
+			$userQuestionAnwserCount = UserQuestionAnwser::count();
+			
+		if ($questionsCount != $userQuestionAnwserCount) {
+			return redirect()->route('exam.questions.dashboard')
+			->withSuccess('Please select next exam or your exam level finsihed');		
+		}	
+		
+		$data = view('exam.certification_pdf');
+		
+		$mpdf = new \Mpdf\Mpdf();
+		$mpdf->WriteHTML($data);
+		$mpdf->Output();
+		//$pdf = PDF::loadView('pdf.invoice', $data);
+
 		return view('exam.certification');
 	}
 

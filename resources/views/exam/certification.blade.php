@@ -23,8 +23,8 @@
                     <th class="min-width-80">Student</th>
                     <th class="min-width-150">User Id</th>
                     <th class="min-width-100">Score</th>
-                    <th class="min-width-80">Percentage Score</th>
-                    <th class="min-width-80">Performance Level</th>
+                    <?php /*<th class="min-width-80">Percentage Score</th>
+                    <th class="min-width-80">Performance Level</th>*/?>
                     <th class="min-width-150">Status</th>
                 </tr>
                 </thead>
@@ -33,7 +33,7 @@
 						<td> {{Auth::user()->first_name}} {{Auth::user()->last_name}}</td>
 						<td>{{Auth::user()->id}}</td>
 						<td>{{\Vanguard\Helpers\Helper::userAllScore()}}</td>
-						<td><?php echo number_format(\Vanguard\Helpers\Helper::allQuestions()/ \Vanguard\Helpers\Helper::userAllScore(), 2); ?>%</td>
+						<?php /*<td><?php echo number_format(\Vanguard\Helpers\Helper::allQuestions()/ \Vanguard\Helpers\Helper::userAllScore(), 2); ?>%</td>
 						<td>
 							@if(\Vanguard\Helpers\Helper::allQuestions()/ \Vanguard\Helpers\Helper::userAllScore() < 49)
 							E
@@ -46,7 +46,7 @@
 							@elseif(\Vanguard\Helpers\Helper::allQuestions()/ \Vanguard\Helpers\Helper::userAllScore() > 90 && \Vanguard\Helpers\Helper::allQuestions()/ \Vanguard\Helpers\Helper::userAllScore() <100)	
 							A
 							@endif
-						</td>
+						</td>*/?>
 						<td>Completed</td>
 					</tr>
 				</tbody>

@@ -7,7 +7,14 @@
 	<h4>{{ $categoriesObj->name }}</h4>
 	<span id="sentence-error" class="invalid-feedback"></span>
 	@if($categoriesObj->name == 'Numeracy/Literacy') 
-		<div>{{ $categoriesObj->story }}</div>	
+		@if($questions->id ==109)
+			<div><h5>{{ $categoriesObj->story }}</h5></div>
+		@elseif($questions->id ==110)
+			<div><h5>A cup of coffee costs me R22.00. I buy a cup of coffee 4 times a week</h5></div>
+		@elseif($questions->id ==111)
+			<div><h5>Coffee + a sandwich costs R60.</h5></div>
+		@endif	
+			
 	@endif		
 	<h4>Question: {{ $questions->sentence }}</h4>
 							 

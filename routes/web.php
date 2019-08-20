@@ -72,7 +72,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'exam', 'as' => 'exam.'], func
 	#Route::get('main-dashboard', 'ExamController@mainDashboard')->name('questions.main-dashboard');
 	Route::get('dashboard', 'ExamController@dashboard')->name('questions.dashboard');
 	Route::post('store', 'ExamController@store')->name('questions.store');
-    Route::get('certification', 'ExamController@certification');
+    Route::get('certification', 'ExamController@certification')->name('questions.certification');
 	Route::get('story', 'ExamController@story')->name('questions.story');
 });	
 
