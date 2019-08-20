@@ -23,10 +23,10 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
 <div style="position:absolute;left:0px;top:0px">
 <img src="background1.jpg" width=595 height=841></div>
 <div style="position:absolute;left:105.01px;top:138.85px" class="cls_002"><span class="cls_002">Perls Literacy Assessment Score</span></div>
-<div style="position:absolute;left:220.07px;top:216.63px" class="cls_003"><span class="cls_003">KEVIN</span></div>
-<div style="position:absolute;left:211.61px;top:267.64px" class="cls_003"><span class="cls_003">BANKS</span></div>
+<div style="position:absolute;left:220.07px;top:216.63px" class="cls_003"><span class="cls_003">dev_first_name</span></div>
+<div style="position:absolute;left:211.61px;top:267.64px" class="cls_003"><span class="cls_003">dev_last_name</span></div>
 <div style="position:absolute;left:128.20px;top:445.80px" class="cls_004"><span class="cls_004">YOUR SCORE</span></div>
-<div style="position:absolute;left:246.94px;top:495.84px" class="cls_005"><span class="cls_005">78</span></div>
+<div style="position:absolute;left:246.94px;top:495.84px" class="cls_005"><span class="cls_005">dev_score</span></div>
 <div style="position:absolute;left:205.97px;top:732.86px" class="cls_006"><span class="cls_006">Brian Hough</span></div>
 <div style="position:absolute;left:238.07px;top:810.20px" class="cls_007"><span class="cls_007"> </span><A HREF="http://www.pals.co.za/">www.pals.co.za</A> </div>
 </div>
