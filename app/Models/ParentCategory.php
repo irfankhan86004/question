@@ -14,7 +14,7 @@ class ParentCategory extends Model
   //  use SoftDeletes;
 	
 	protected $table = 'parent_category';
-	
+	protected $fillable = ['name'];
 	
 	const CATEGORY_1 = 'Basic Vocabulary';
 	const CATEGORY_2 = 'Literacy Reading Comprehension';
