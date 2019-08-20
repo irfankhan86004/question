@@ -59,8 +59,8 @@ class ExamController extends Controller
 			$userQuestionAnwserCount = UserQuestionAnwser::count();
 			
 		if ($questionsCount != $userQuestionAnwserCount) {
-			return redirect()->route('exam.questions.dashboard')
-			->withSuccess('Please select next exam or your exam level finsihed');		
+			//return redirect()->route('exam.questions.dashboard')
+			//->withSuccess('Please select next exam or your exam level finsihed');		
 		}	
 		
 		$data = view('exam.certification_pdf');
