@@ -87,18 +87,28 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('generate-child-category', 'QuestionsController@generateChildCategory')->name('question.generate-child-category');
 		
 	});
-	Route::group(['prefix' => 'choices'], function () {
+    Route::group(['prefix' => 'choices'], function () {
 		Route::get('/', 'QuestionsController@indexChoice')->name('choices');
 		Route::get('create', 'QuestionsController@createChoice')->name('choices.create');
-		 Route::post('store', 'QuestionsController@storeChoice')->name('choices.store');
+		Route::post('store', 'QuestionsController@storeChoice')->name('choices.store');
 		Route::get('edit/{id}', 'QuestionsController@editChoice')->name('choices.edit');
 		Route::post('storeedit', 'QuestionsController@storeeditChoice')->name('choices.storeedit');
-
-	});
+    });
+    Route::group(['prefix' => 'parentcat'], function () {
+        Route::get('/', 'ParentcatController@index')->name('parentcat');
+        Route::get('create', 'ParentcatController@create')->name('parentcat.create');
+        Route::post('store', 'ParentcatController@store')->name('parentcat.store');
+        Route::get('edit/{id}', 'ParentcatController@edit')->name('parentcat.edit');
+        Route::post('storeedit', 'ParentcatController@storeedit')->name('parentcat.storeedit');
+        
+         Route::delete('delete/{id}', [
+        'as' => 'parentcat.del',
+        'uses' => 'ParentcatController@delete'
+    ]);
+    });
+   
 	Route::group(['prefix' => 'results'], function () {
         Route::get('/', 'ResultsController@index')->name('results');
-        
-
     });
 	
 
