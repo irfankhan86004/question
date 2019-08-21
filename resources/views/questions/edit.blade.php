@@ -50,5 +50,30 @@
 @section('scripts')
 {!! HTML::script('assets/js/as/choice.js') !!}
 {!! JsValidator::formRequest('Vanguard\Http\Requests\Question\CreateQuestionRequest', '#question-form') !!}
-   
+<script>
+
+$('#parent_category').change(function () {
+    //alert("hii");
+   categorySelect();
+});
+categorySelect();
+function categorySelect(){
+    //alert("hello");
+    parent_category = $("#parent_category").val()
+    $.ajax({
+        type: "POST",
+        url: "{{ URL::to('questions/generate-child-category') }}",
+        data: {'parent_category_id': parent_category, _token: '{{ csrf_token() }}'},
+        success: function (data) {
+           // $('#child_category_div').show();
+            $('#child_category').empty();
+            
+            // X table link field 
+            $.each(data, function (val, text) {
+                $('#child_category').append($('<option></option>').val(val).html(text))
+            });
+        }
+    });
+}
+</script>   
 @stop

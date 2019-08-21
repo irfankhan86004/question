@@ -61,9 +61,11 @@ class QuestionsController extends Controller
        // echo $id;
         $question = Questions::find($id);
         $categories = Categories::all();
+        $parentCategory = ParentCategory::all();
         $choices = DB::table('questionchoices')
         ->leftjoin('questions', 'questionchoices.fk_question_id', '=', 'questions.id')
         ->leftjoin('categories', 'categories.id', '=', 'questions.level')
+        ->leftjoin('parent_category', 'parent_category.id', '=', 'questions.parent_category_id')
         ->select(
         'questionchoices.id as ansid',
         'questionchoices.answer',
@@ -74,10 +76,10 @@ class QuestionsController extends Controller
         'categories.name as catname'
         )->where('questionchoices.fk_question_id', $id)->get();
 
-        return view('questions.edit', compact('question','categories','choices'));
+        return view('questions.edit', compact('question','categories','parentCategory','choices'));
     }
     public function storeedit(request $request){
-     /* print_r($request->all());
+   /*  print_r($request->all());
       exit();*/
       $answers = $request->input('answer'); 
       if (!empty($answers)) {
@@ -103,6 +105,7 @@ class QuestionsController extends Controller
       }
         $task = Questions::find($request->questionid);
         $task->sentence = $request['sentence'];
+        $task->parent_category_id = $request['parent_category_id'];
         $task->level = $request['level'];
         $task->active = $request['active'];
         $task->save();
