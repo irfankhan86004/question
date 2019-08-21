@@ -49,9 +49,9 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
 	<div class="bg-logo">
 		<img src="{{asset('assets/img/PALS_logo.png')}}" style="width:100%; height:auto" alt='logo' />
 	</div>
-<div  class="cls_003"><span class="cls_003">dev_first_name <br/> dev_last_name</span></div>
+<div  class="cls_003"><span class="cls_003">dev_first_name</span></div>
 <div class="cls_004"><span class="cls_004">YOUR SCORE</span></div>
-<div class="cls_005"><span class="cls_005">98</span></div>
+<div class="cls_005"><span class="cls_005">dev_score</span></div>
 <div class="signature-logo">
 		<img src="{{asset('assets/img/signature.png')}}" style="width:200px; height:auto" alt='signature' />
 	</div>

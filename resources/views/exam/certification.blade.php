@@ -63,10 +63,10 @@
         		 	<h4 class="alert alert-success">Thank you for participating on the plas program. You have successfully completed.</h4>
         		 	<div class="certificate-pdf col-md-5">
         		 		<h5>Download your certificate below</h5>
-        		 		<object data="{{url('upload/users/certificate/PALS_certificate.pdf')}}" type="application/pdf" width="100%" height="100%" style="height: 250px">
-        		 			<p>Alternative text - include a link <a href="{{url('upload/users/certificate/PALS_certificate.pdf')}}">to the PDF!</a></p>
+        		 		<object data="{{url('upload/users/certificate/'.Auth::user()->id.'.pdf')}}" type="application/pdf" width="100%" height="100%" style="height: 250px">
+        		 			<p>Alternative text - include a link <a href="{{url('upload/users/certificate/'.Auth::user()->id.'.pdf')}}">to the PDF!</a></p>
 						</object><br/>
-						<h5><a class="text-danger" href="{{url('upload/users/certificate/PALS_certificate.pdf')}}">Download Certificate</a></h5>
+						<h5><a class="text-danger" target="_blank" href="{{url('upload/users/certificate/'.Auth::user()->id.'.pdf')}}">Download Certificate</a></h5>
         		 	</div>
         		 </div>
         	</div>
