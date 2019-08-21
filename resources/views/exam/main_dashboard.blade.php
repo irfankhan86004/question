@@ -48,16 +48,30 @@
 												<strong>{{ $category->name}}</strong>
 												<div class="question-name">
 												@if (\Vanguard\Helpers\Helper::examLevel($category->id, $i) == '2' && $flag === false)
-													<a href='{{ route('exam.questions')}}'>Start Exam</a>
+													@if($category->name == \Vanguard\Models\ParentCategory::CATEGORY_2) 
+														<a href='{{ route('exam.questions.story')}}'>Start Exam</a>
+													@else
+														<a href='{{ route('exam.questions')}}'>Start Exam</a>
+													@endif			
 													<?php $flag = true;?>
 												@elseif (\Vanguard\Helpers\Helper::examLevel($category->id, $i) == '3' && $flag === false)
-													<a href='{{ route('exam.questions')}}'>Exam Running</a>
+													@if($category->name == \Vanguard\Models\ParentCategory::CATEGORY_2) 
+														<a href='{{ route('exam.questions.story')}}'>Exam Running</a>
+													@else
+														<a href='{{ route('exam.questions')}}'>Exam Running</a>
+													@endif
+													
 													<?php $flag = true;?>
 												@elseif (\Vanguard\Helpers\Helper::examLevel($category->id, $i) == '4' && $flag === false)	
 													<a href='#'>Exam Finished</a>
 
 												@elseif (\Vanguard\Helpers\Helper::examLevel($category->id, $i) == '5' || $flag === true)	
-													<a href='#' class='sweet_alert_c'>Finish Above Exam First</a>
+													@if($category->id == 2)
+														<a href='#' class='sweet_alert_c'>Finish BV Exam First</a>
+													@elseif($category->id == 3)
+														<a href='#' class='sweet_alert_c'>Finish LRC Exam First</a>
+													@endif	
+													
 												@endif	
 												</div>
 											
