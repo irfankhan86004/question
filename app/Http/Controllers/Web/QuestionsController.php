@@ -112,6 +112,16 @@ class QuestionsController extends Controller
         return redirect()->route('questions')
         ->withSuccess(trans('app.que_updated'));
     }
+     public function delete($id){
+       
+        $que = Questions::find($id);    
+        $que->delete();
+        $choices = Choices::where('fk_question_id', $id);    
+        $choices->delete();
+        return redirect()->route('questions')
+            ->withSuccess(trans('app.parentcat_deleted'));
+        
+    }
     public function indexChoice()
     {
        // $allquestions = Questions::all();

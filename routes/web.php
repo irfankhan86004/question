@@ -85,7 +85,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('edit/{id}', 'QuestionsController@edit')->name('questions.edit');
 		Route::post('storeedit', 'QuestionsController@storeedit')->name('question.storeedit');
 		Route::post('generate-child-category', 'QuestionsController@generateChildCategory')->name('question.generate-child-category');
-		
+		Route::delete('delete/{id}', [
+        'as' => 'question.del',
+        'uses' => 'QuestionsController@delete'
+    ]   );
 	});
     Route::group(['prefix' => 'choices'], function () {
 		Route::get('/', 'QuestionsController@indexChoice')->name('choices');
@@ -100,11 +103,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('store', 'ParentcatController@store')->name('parentcat.store');
         Route::get('edit/{id}', 'ParentcatController@edit')->name('parentcat.edit');
         Route::post('storeedit', 'ParentcatController@storeedit')->name('parentcat.storeedit');
-        
-         Route::delete('delete/{id}', [
+        Route::delete('delete/{id}', [
         'as' => 'parentcat.del',
         'uses' => 'ParentcatController@delete'
-    ]);
+    ]   );
     });
    
 	Route::group(['prefix' => 'results'], function () {

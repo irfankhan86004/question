@@ -15,7 +15,7 @@
             <i class="fas fa-edit"></i>
         </a>
   
-        <a href="#"
+        <a href="{{ route('question.del', $question->id) }}"
            class="btn btn-icon"
            title="@lang('app.delete_que')"
            data-toggle="tooltip"
