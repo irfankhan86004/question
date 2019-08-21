@@ -66,6 +66,8 @@ class ExamController extends Controller
 		$data = view('exam.certification_pdf');
 		
 		$mpdf = new \Mpdf\Mpdf();
+		$stylesheet = file_get_contents(asset('assets/mpdfstylePaged.css'));
+		$mpdf->WriteHTML($stylesheet,1);	// The parameter 1 tells that this is css/style only and no body/html/text
 		$mpdf->WriteHTML($data);
 		$mpdf->Output();
 		//$pdf = PDF::loadView('pdf.invoice', $data);
