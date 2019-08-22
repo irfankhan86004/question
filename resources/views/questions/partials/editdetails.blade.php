@@ -8,12 +8,25 @@
             <input type="text" class="form-control" id="sentence"
                    name="sentence" placeholder="Sentence" value="{{ $question->sentence ? $question->sentence : '' }}">
         </div>
-      
+      <div class="form-group">
+            <label for="level">Parent Category*</label>
+            
+           
+        <select name="parent_category_id" class="form-control" id="parent_category">
+            @foreach ($parentCategory as $parentcategory)
+              @if(($parentcategory->id) == $question->parent_category_id )
+              <option value="{{ $parentcategory->id }}" selected>{{ $parentcategory->name }}</option>
+                @else 
+                     <option value="{{ $parentcategory->id }}" >{{ $parentcategory->name }}</option>
+                @endif
+            @endforeach
+        </select>
+        </div>
         <div class="form-group">
             <label for="level">Level</label>
             
            
-        <select name=level class="form-control">
+        <select name="level" class="form-control" id="child_category">
             @foreach ($categories as $category)
                @if(($category->id) == $question->level )
               <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
