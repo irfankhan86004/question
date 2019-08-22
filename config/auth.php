@@ -12,7 +12,8 @@ return [
     */
 
     'social' => [
-        'providers' => ['facebook', 'twitter', 'google']
+        'providers' => ['facebook', 'twitter']
+        //'providers' => ['facebook', 'twitter', 'google']
     ],
 
    /*
