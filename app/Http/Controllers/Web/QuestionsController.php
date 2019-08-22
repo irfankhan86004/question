@@ -122,6 +122,30 @@ class QuestionsController extends Controller
             ->withSuccess(trans('app.parentcat_deleted'));
         
     }
+    public function ansdelete($id){
+        $choice = Choices::find($id);
+        $queid = $choice->fk_question_id;
+        $question = Questions::find($queid);
+        $categories = Categories::all();
+        $parentCategory = ParentCategory::all();
+        $choices = DB::table('questionchoices')
+        ->leftjoin('questions', 'questionchoices.fk_question_id', '=', 'questions.id')
+        ->leftjoin('categories', 'categories.id', '=', 'questions.level')
+        ->leftjoin('parent_category', 'parent_category.id', '=', 'questions.parent_category_id')
+        ->select(
+        'questionchoices.id as ansid',
+        'questionchoices.answer',
+        'questionchoices.is_correct',
+        'questionchoices.active',
+        'questionchoices.fk_question_id',
+        'questions.sentence',
+        'categories.name as catname'
+        )->where('questionchoices.fk_question_id', $id)->get();
+
+        
+        $choice->delete();
+        return view('questions.edit', compact('question','categories','parentCategory','choices'));  
+    }
     public function indexChoice()
     {
        // $allquestions = Questions::all();

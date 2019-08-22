@@ -58,7 +58,7 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
 <div  class="cls_006"><span class="cls_006">Brian Hough</span></div>
 </div>
 </div>
-<div  class="cls_007"><span class="cls_007"> </span><A HREF="http://www.pals.co.za/">www.pals.co.za</A> </div>
+<div  class="cls_007"><span class="cls_007"> </span><A HREF="http://www.pals.co.za/">www.plas.co.za</A> </div>
 </body>
 </html>
 <?php //exit;?>

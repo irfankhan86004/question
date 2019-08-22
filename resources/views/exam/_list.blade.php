@@ -30,9 +30,9 @@
 		@if(isset($questionsCount) && isset($userQuestionAnwserCount) && $questionsCount == $userQuestionAnwserCount)
 			All exam level finished <a href='{{ route('exam.questions')}}'>Go dashbaord</a>
 		@elseif($categoriesObj->parentCategory->name == \Vanguard\Models\ParentCategory::CATEGORY_2) 
-			{{ $userQuestionAnwser->category->parentCategory->name }} {{ $userQuestionAnwser->category->name }} exam Finished <a href='{{ route('exam.questions.story')}}'>Start Next Level</a>
+			{{ $userQuestionAnwser->category->parentCategory->name }} {{ $userQuestionAnwser->category->name }} exam Finished <a href='{{ route('exam.questions.story')}}'>Start Next Section</a>
 		@else
-			{{ $userQuestionAnwser->category->parentCategory->name }} {{ $userQuestionAnwser->category->name }} exam Finished <a href='{{ route('exam.questions')}}'>Start Next Level</a>
+			{{ $userQuestionAnwser->category->parentCategory->name }} {{ $userQuestionAnwser->category->name }} exam Finished <a href='{{ route('exam.questions')}}'>Start Next Section</a>
 		@endif
 		
 	</div>

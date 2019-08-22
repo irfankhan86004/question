@@ -89,6 +89,10 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'question.del',
         'uses' => 'QuestionsController@delete'
     ]   );
+        Route::delete('ansdelete/{id}', [
+        'as' => 'answer.del',
+        'uses' => 'QuestionsController@ansdelete'
+    ]   );
 	});
     Route::group(['prefix' => 'choices'], function () {
 		Route::get('/', 'QuestionsController@indexChoice')->name('choices');

@@ -48,8 +48,11 @@
         </div>
        
         <div class="form-group">
-         <label for="answer">Answer</label>
-         <label for="correct" style="float: right;">Correct </label>
+            <div class="row">
+         <label for="answer" class="col-md-6">Answer</label>
+         <label for="correct" class="col-md-3" >Correct </label>
+         <label for="correct" class="col-md-3" >Delete </label>
+     </div>
          <div class="item">
             <div id="answer_section">
             <div class="answer_radio">
@@ -62,8 +65,20 @@
                   <input type="text" class="form-control" id="answer" name="answer[{{$loop->index}}][answer]" placeholder="Answer" value="{{ $choice->answer ? $choice->answer : '' }}">
                 </div>
             </div>
-             <div id="correct" class="col-md-6 text-right">  <input type="hidden" name="answer[{{$loop->index}}][is_correct]" value="0"> <input type="radio" class="is_correct" id="is_correct[{{$loop->index}}]" name="is_correct" value="1"  ansid="{{ $choice->ansid ? $choice->ansid : '' }}" {{ ($choice->is_correct=="1")? "checked" : "" }} > 
-             </div>
+             <div id="correct" class="col-md-3 text-right">  <input type="hidden" name="answer[{{$loop->index}}][is_correct]" value="0"> <input type="radio" class="is_correct" id="is_correct[{{$loop->index}}]" name="is_correct" value="1"  ansid="{{ $choice->ansid ? $choice->ansid : '' }}" {{ ($choice->is_correct=="1")? "checked" : "" }} > 
+             </div> 
+             <div id="correct_del" class="col-md-3 text-right">  <a href="{{ route('answer.del', $choice->ansid) }}"
+           class="btn btn-icon"
+           title="@lang('app.delete_que')"
+           data-toggle="tooltip"
+           data-placement="top"
+           data-method="DELETE"
+           data-confirm-title="@lang('app.please_confirm')"
+           data-confirm-text="@lang('app.are_you_sure_delete_user')"
+           data-confirm-delete="@lang('app.yes_delete_him')">
+            <i class="fas fa-trash"></i>
+        </a></div>
+            
         </div>
              @endforeach
              @endif

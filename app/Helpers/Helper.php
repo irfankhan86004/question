@@ -70,7 +70,8 @@ class Helper
 			->orderBy('id', 'DESC')
 			->pluck('updated_at'); 
 			$updated_at = $query->first();
-			return $updated_at;
+
+			return date( 'Y-m-d', strtotime($updated_at) ); 
 		
 	}
 	

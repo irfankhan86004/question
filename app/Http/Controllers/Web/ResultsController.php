@@ -37,8 +37,10 @@ class ResultsController extends Controller
     public function __construct(UserRepository $users, ActivityRepository $activities)
     {
         $this->middleware('auth');
+        $this->middleware('permission:roles.manage');
         $this->users = $users;
         $this->activities = $activities;
+
     }
 	
 	public function index()
