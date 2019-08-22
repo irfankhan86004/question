@@ -50,17 +50,21 @@ class ExamController extends Controller
     {
 		$categories = ParentCategory::orderBy('id', 'ASC')->get();
 		
+		//dump(\Vanguard\Models\Questions::count());
+		
+		//dump(\Vanguard\Models\UserQuestionAnwser::count());exit;
+		
 		return view('exam.main_dashboard', compact('questions', 'categories'));
 	}
 
 	public function certification()
     {
 		$questionsCount = Questions::count();
-			$userQuestionAnwserCount = UserQuestionAnwser::count();
+			$userQuestionAnwserCount = UserQuestionAnwser::where('user_id', Auth::user()->id)->count();
 			
 		if ($questionsCount != $userQuestionAnwserCount) {
-			//return redirect()->route('exam.questions.dashboard')
-			//->withSuccess('Please select next exam or your exam level finsihed');		
+			return redirect()->route('exam.questions.dashboard')
+			->withSuccess('Please select next exam or your exam level finsihed');		
 		}	
 		
 		$data = view('exam.certification_pdf');
@@ -69,10 +73,12 @@ class ExamController extends Controller
 		$score = \Vanguard\Helpers\Helper::userAllScore();
 		$data = str_replace('dev_score', $score, $data);
 		
+		ini_set('allow_url_fopen', '1');
+		
 		if (file_exists('upload/users/certificate/'.Auth::user()->id.'.pdf') === false) {
 			$mpdf = new \Mpdf\Mpdf();
-			$stylesheet = file_get_contents(asset('assets/mpdfstylePaged.css'));
-			$mpdf->WriteHTML($stylesheet,1);	// The parameter 1 tells that this is css/style only and no body/html/text
+			//$stylesheet = file_get_contents(asset('assets/mpdfstylePaged.css'));
+			//$mpdf->WriteHTML($stylesheet,1);	// The parameter 1 tells that this is css/style only and no body/html/text
 			$mpdf->WriteHTML($data);
 			$mpdf->Output('upload/users/certificate/'.Auth::user()->id.'.pdf','F');
 		}
@@ -213,7 +219,7 @@ class ExamController extends Controller
 			}
 			
 			$questionsCount = Questions::count();
-			$userQuestionAnwserCount = UserQuestionAnwser::count();
+			$userQuestionAnwserCount = UserQuestionAnwser::where('user_id', Auth::user()->id)->count();
 			
 			view()->share('questionsCount', $questionsCount);
 			view()->share('userQuestionAnwser', $userQuestionAnwserCount);

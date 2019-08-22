@@ -88,7 +88,7 @@
 			</div>
 		</div>
 	</div>
-	<?php if (\Vanguard\Models\Questions::count() == \Vanguard\Models\UserQuestionAnwser::count()):?>
+	<?php if (\Vanguard\Models\Questions::count() == \Vanguard\Models\UserQuestionAnwser::where('user_id', Auth::user()->id)->count()):?>
 		<div class="row">
 			<div class="col-md-12">
 			<div class="card">
@@ -114,7 +114,7 @@
 									<td>{{\Vanguard\Helpers\Helper::userCategoryScore(2)}}</td>
 									<td>{{\Vanguard\Helpers\Helper::userCategoryScore(3)}}</td>
 									<td>
-									<?php if (\Vanguard\Models\Questions::count() == \Vanguard\Models\UserQuestionAnwser::count()):
+									<?php if (\Vanguard\Models\Questions::count() == \Vanguard\Models\UserQuestionAnwser::where('user_id', Auth::user()->id)->count()):
 									
 									$userQuestionAnwser = \Vanguard\Models\UserQuestionAnwser::where('user_id', Auth::user()->id)->latest('created_at')->first();
 									
