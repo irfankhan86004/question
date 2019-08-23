@@ -30,7 +30,7 @@
                 </thead>
                <tbody>
 					<tr>
-						<td> {{Auth::user()->first_name}} {{Auth::user()->last_name}}</td>
+						<td> {{Auth::user()->name_and_surname}}</td>
 						<td>{{Auth::user()->id}}</td>
 						<td>{{\Vanguard\Helpers\Helper::userAllScore()}}</td>
 						<?php /*<td><?php echo number_format(\Vanguard\Helpers\Helper::allQuestions()/ \Vanguard\Helpers\Helper::userAllScore(), 2); ?>%</td>

@@ -69,7 +69,7 @@ class ExamController extends Controller
 		
 		$data = view('exam.certification_pdf');
 		
-		$data = str_replace('dev_first_name', Auth::user()->username, $data);
+		$data = str_replace('dev_first_name', Auth::user()->name_and_surname, $data);
 		$score = \Vanguard\Helpers\Helper::userAllScore();
 		$data = str_replace('dev_score', $score, $data);
 		

@@ -108,7 +108,7 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td> {{Auth::user()->first_name}} {{Auth::user()->last_name}}</td>
+									<td> {{Auth::user()->name_and_surname}}</td>
 									<td>{{Auth::user()->id}}</td>
 									<td>{{\Vanguard\Helpers\Helper::userCategoryScore(1)}}</td>
 									<td>{{\Vanguard\Helpers\Helper::userCategoryScore(2)}}</td>
