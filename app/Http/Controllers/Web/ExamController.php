@@ -63,8 +63,8 @@ class ExamController extends Controller
 			$userQuestionAnwserCount = UserQuestionAnwser::where('user_id', Auth::user()->id)->count();
 			
 		if ($questionsCount != $userQuestionAnwserCount) {
-			return redirect()->route('exam.questions.dashboard')
-			->withSuccess('Please select next exam or your exam level finsihed');		
+			//return redirect()->route('exam.questions.dashboard')
+			//->withSuccess('Please select next exam or your exam level finsihed');		
 		}	
 		
 		$data = view('exam.certification_pdf');
@@ -85,6 +85,13 @@ class ExamController extends Controller
 
 
 		return view('exam.certification');
+	}
+	
+	public function preview()
+    {
+		$questions = Questions::orderBy('id', 'ASC')->get();
+		
+		return view('exam.preview', compact('questions'));
 	}
 
     /**

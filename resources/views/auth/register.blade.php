@@ -10,7 +10,7 @@
 
     <div class="col-md-8 col-lg-6 col-xl-5 mx-auto my-10p">
         <div class="text-center">
-            <img src="{{ url('assets/img/vanguard-logo.png') }}" alt="{{ settings('app_name') }}" height="50">
+            <img src="{{ url('assets/img/PLAS_398x159.png') }}" alt="{{ settings('app_name') }}">
         </div>
 
         @include('partials/messages')
@@ -27,10 +27,23 @@
                     <form role="form" action="<?= url('register') ?>" method="post" id="registration-form" autocomplete="off" class="mt-3">
                         <input type="hidden" value="<?= csrf_token() ?>" name="_token">
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="@lang('app.email')" value="{{ old('email') }}">
+                            <input type="text" name="name_and_surname" id="name_and_surname" class="form-control" placeholder="Name And Surname"  value="{{ old('first_name') }}">
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="username" id="username" class="form-control" placeholder="@lang('app.username')"  value="{{ old('username') }}">
+						<div class="form-group">
+                            <input type="text" name="birthday" id="birthday" class="form-control" placeholder="Date Of Birth"  value="{{ old('date_of_birth') }}">
+                        </div>
+						<div class="form-group">
+							<input type="radio" name="gender" value="male" checked> Male
+							<input type="radio" name="gender" value="female"> Female<br>
+						</div>
+						<div class="form-group">
+							<label for="address">Province</label>
+								
+							{!! Form::select('province', $provinces, null, ['class' => 'form-control']) !!}
+						</div>
+						
+						<div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="@lang('app.email')" value="{{ old('email') }}">
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" id="password" class="form-control" placeholder="@lang('app.password')">
@@ -38,6 +51,7 @@
                          <div class="form-group">
                             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="@lang('app.confirm_password')">
                         </div>
+						
 
                         @if (settings('tos'))
                             <div class="custom-control custom-checkbox">
@@ -125,4 +139,10 @@
 
 @section('scripts')
     {!! JsValidator::formRequest('Vanguard\Http\Requests\Auth\RegisterRequest', '#registration-form') !!}
+	<script>
+	$('#birthday').datepicker({
+		orientation: 'bottom',
+		format: 'yyyy-mm-dd'
+	});
+	</script>
 @stop

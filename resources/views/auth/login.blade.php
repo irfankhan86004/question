@@ -6,7 +6,7 @@
 
 <div class="col-md-8 col-lg-6 col-xl-5 mx-auto my-10p" id="login">
     <div class="text-center">
-        <img src="{{ url('assets/img/PALS_logo.png') }}" alt="{{ settings('app_name') }}" height="50">
+        <img src="{{ url('assets/img/PLAS_398x159.png') }}" alt="{{ settings('app_name') }}">
     </div>
 
     <div class="card mt-5">
@@ -34,7 +34,7 @@
                                 name="username"
                                 id="username"
                                 class="form-control"
-                                placeholder="@lang('app.email_or_username')">
+                                placeholder="Email">
                     </div>
 
                     <div class="form-group password-field">

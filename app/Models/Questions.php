@@ -20,4 +20,9 @@ class Questions extends Model
 		return $this->hasMany(QuestionChoices::class, 'fk_question_id', 'id');
 	}
 	
+	public function category()
+    {
+        return $this->belongsTo(Categories::class, 'level', 'id');
+    }
+	
 }

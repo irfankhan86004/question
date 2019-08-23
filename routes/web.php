@@ -75,6 +75,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'exam', 'as' => 'exam.'], func
 	Route::post('store', 'ExamController@store')->name('questions.store');
     Route::get('certification', 'ExamController@certification')->name('questions.certification');
 	Route::get('story', 'ExamController@story')->name('questions.story');
+	Route::get('preview', 'ExamController@preview')->name('questions.preview');
 });	
 
 Route::group(['middleware' => 'auth'], function () {

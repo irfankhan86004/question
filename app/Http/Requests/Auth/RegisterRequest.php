@@ -15,7 +15,8 @@ class RegisterRequest extends Request
     {
         $rules = [
             'email' => 'required|email|unique:users,email',
-            'username' => 'required|unique:users,username',
+            'name_and_surname' => 'required',
+            'birthday' => 'required',
             'password' => 'required|confirmed|min:8',
         ];
 
@@ -33,7 +34,8 @@ class RegisterRequest extends Request
     public function messages()
     {
         return [
-            'tos.accepted' => trans('app.you_have_to_accept_tos')
+            'tos.accepted' => trans('app.you_have_to_accept_tos'),
+            'name_and_surname' => 'The name and surname field is required'
         ];
     }
 }

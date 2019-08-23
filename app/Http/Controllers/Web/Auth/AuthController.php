@@ -314,8 +314,19 @@ class AuthController extends Controller
     public function getRegister()
     {
         $socialProviders = config('auth.social.providers');
+		
+		$provinces = ['eastern_cape' => 'Eastern Cape',
+			'free_state' => 'Free State',
+			'cauteng' => 'Gauteng',
+			'kwaZulu_natal' =>  'KwaZulu-Natal', 
+			'limpopo' => 'Limpopo',
+			'mpumalanga' => 'Mpumalanga',
+			'northern_cape' => 'Northern Cape',
+			'north_west' => 'North West',
+			'western_cape' => 'Western Cape'
+		];
 
-        return view('auth.register', compact('socialProviders'));
+        return view('auth.register', compact('socialProviders', 'provinces'));
     }
 
     /**
@@ -337,7 +348,7 @@ class AuthController extends Controller
 
         // Add the user to database
         $user = $this->users->create(array_merge(
-            $request->only('email', 'username', 'password'),
+            $request->only('email', 'name_and_surname', 'password', 'birthday', 'province', 'gender'),
             ['status' => $status, 'role_id' => $role->id]
         ));
 
