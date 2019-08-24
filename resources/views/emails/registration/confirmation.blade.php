@@ -3,7 +3,7 @@
 
 <p>@lang('app.confirm_email_on_link_below')</p>
 
-<a href="{{ route('register.confirm-email', $token) }}">@lang('app.confirm_email')</a> <br/><br/>
+<a style='background-color:#202b6c !important;' href="{{ route('register.confirm-email', $token) }}">@lang('app.confirm_email')</a> <br/><br/>
 
 <p>@lang('app.if_you_cant_click')</p>
 

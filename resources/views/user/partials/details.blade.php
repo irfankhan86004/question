@@ -11,15 +11,16 @@
                 ['class' => 'form-control', 'id' => 'status', $profile ? 'disabled' : '']) !!}
         </div>
         <div class="form-group">
-            <label for="first_name">@lang('app.first_name')</label>
+            <label for="first_name">Name And Surname</label>
             <input type="text" class="form-control" id="first_name"
-                   name="first_name" placeholder="@lang('app.first_name')" value="{{ $edit ? $user->first_name : '' }}">
+                   name="name_and_surname" placeholder="Name And Surname" value="{{ $edit ? $user->name_and_surname : '' }}">
         </div>
-        <div class="form-group">
-            <label for="last_name">@lang('app.last_name')</label>
-            <input type="text" class="form-control" id="last_name"
-                   name="last_name" placeholder="@lang('app.last_name')" value="{{ $edit ? $user->last_name : '' }}">
-        </div>
+		<div class="form-group">
+			<label for="address">Province</label>
+			{!! Form::select('province', $provinces, null, ['class' => 'form-control']) !!}
+		</div>
+		
+		
     </div>
 
     <div class="col-md-6">
@@ -44,9 +45,10 @@
                    name="address" placeholder="@lang('app.address')" value="{{ $edit ? $user->address : '' }}">
         </div>
         <div class="form-group">
-            <label for="address">@lang('app.country')</label>
-            {!! Form::select('country_id', $countries, $edit ? $user->country_id : '', ['class' => 'form-control']) !!}
-        </div>
+			<label for="address">Gender</label><br>
+			<input type="radio" name="gender" value="male" <?php echo (isset($edit) && $user->gender == 'male') ? 'checked' : '' ;?>> Male
+			<input type="radio" name="gender" value="female" <?php echo (isset($edit) && $user->gender == 'female') ? 'checked' : '' ;?>> Female<br>
+		</div>
     </div>
 
     @if ($edit)

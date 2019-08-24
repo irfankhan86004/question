@@ -45,6 +45,7 @@ class ProfileController extends Controller
         $this->middleware('session.database', ['only' => ['sessions', 'invalidateSession']]);
 
         $this->users = $users;
+		
 
         $this->middleware(function ($request, $next) {
             $this->theUser = Auth::user();
@@ -65,9 +66,22 @@ class ProfileController extends Controller
             return $role->id == $this->theUser->role_id;
         })->pluck('name', 'id');
 
+
+		$provinces = ['eastern_cape' => 'Eastern Cape',
+			'free_state' => 'Free State',
+			'cauteng' => 'Gauteng',
+			'kwaZulu_natal' =>  'KwaZulu-Natal', 
+			'limpopo' => 'Limpopo',
+			'mpumalanga' => 'Mpumalanga',
+			'northern_cape' => 'Northern Cape',
+			'north_west' => 'North West',
+			'western_cape' => 'Western Cape'
+		];
+		
         return view('user/profile', [
             'user' => $this->theUser,
             'edit' => true,
+            'provinces' => $provinces,
             'roles' => $roles,
             'countries' => [0 => 'Select a Country'] + $countryRepository->lists()->toArray(),
             'socialLogins' => $this->users->getUserSocialLogins($this->theUser->id),
@@ -83,9 +97,10 @@ class ProfileController extends Controller
      */
     public function updateDetails(UpdateProfileDetailsRequest $request)
     {
+		
         $this->users->update($this->theUser->id, $request->except('role_id', 'status'));
-
-        event(new UpdatedProfileDetails);
+        
+		event(new UpdatedProfileDetails);
 
         return redirect()->back()
             ->withSuccess(trans('app.profile_updated_successfully'));
