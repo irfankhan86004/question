@@ -138,10 +138,13 @@
 @stop
 
 @section('scripts')
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     {!! JsValidator::formRequest('Vanguard\Http\Requests\Auth\RegisterRequest', '#registration-form') !!}
 	<script>
-	$('#birthday').datepicker({
-		orientation: 'bottom',
+	$("#birthday").datepicker({
+		todayHighlight: true,
+		autoclose: true,
 		format: 'yyyy-mm-dd'
 	});
 	</script>
