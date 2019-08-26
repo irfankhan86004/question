@@ -18,7 +18,9 @@ div.cls_006{font-family:"Calibri Light",serif;font-size:39.7px;color:rgb(43,42,4
     margin-top: 20px;}
 span.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(43,42,41);font-weight:normal;font-style:italic;text-decoration: none}
 div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(43,42,41);font-weight:normal;font-style:italic;text-decoration: none;text-align: center;
-    margin-top: 20px;}
+    width: 200px;}
+div.cls_008{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(43,42,41);font-weight:normal;font-style:italic;text-decoration: none;text-align: center;
+    width: 300px;}	
 .signature-logo{text-align: center;display: table;width: 100%; margin-top: 30px;}
 .container-fluid {
     display: table;
@@ -34,6 +36,11 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
     border-color: rgb(50,57,108);
     padding:10px;
 }
+
+.container-bottom {
+    width: 650px;
+	margin-top: 20px;
+}
 .inner-border {
 	 border-style: solid;
     border-width: 3px;
@@ -47,7 +54,7 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
 <div class="container-fluid">
 	<div class="inner-border">
 	<div class="bg-logo">
-		<img src="{{asset('assets/img/PLAS_250x70.jpg')}}" style="width:100%; height:auto" alt='logo' />
+		<img src="{{asset('assets/img/PLAS_JPG.jpg')}}" style="width:100%; height:auto" alt='logo' />
 	</div>
 <div  class="cls_003"><span class="cls_003">dev_first_name</span></div>
 <div class="cls_004"><span class="cls_004">YOUR SCORE</span></div>
@@ -58,7 +65,10 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
 <div  class="cls_006"><span class="cls_006">Brian Hough</span></div>
 </div>
 </div>
-<div  class="cls_007"><span class="cls_007"> </span><A HREF="http://www.pals.co.za/">www.plas.co.za</A> </div>
+<div class='container-bottom'>
+	<div  class="cls_007" style='float:left;'><A HREF="http://www.pals.co.za/">www.plas.co.za</A> </div>
+	<div  class="cls_008" style='float:right;'>Completion Date: DATE_COMPLETAION </div>
+<div>	
 </body>
 </html>
 <?php //exit;?>

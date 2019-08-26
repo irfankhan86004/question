@@ -63,13 +63,19 @@ class ExamController extends Controller
 			$userQuestionAnwserCount = UserQuestionAnwser::where('user_id', Auth::user()->id)->count();
 			
 		if ($questionsCount != $userQuestionAnwserCount) {
-			//return redirect()->route('exam.questions.dashboard')
-			//->withSuccess('Please select next exam or your exam level finsihed');		
+			return redirect()->route('exam.questions.dashboard')
+			->withSuccess('Please select next exam or your exam level finsihed');		
 		}	
+		
+		$userQuestionAnwser = \Vanguard\Models\UserQuestionAnwser::where('user_id', Auth::user()->id)->latest('created_at')->first();
+		
+		$DATE_COMPLETAION = date('Y-m-d',strtotime($userQuestionAnwser->created_at));
 		
 		$data = view('exam.certification_pdf');
 		
 		$data = str_replace('dev_first_name', Auth::user()->name_and_surname, $data);
+		$data = str_replace('DATE_COMPLETAION', $DATE_COMPLETAION, $data);
+		
 		$score = \Vanguard\Helpers\Helper::userAllScore();
 		$data = str_replace('dev_score', $score, $data);
 		
