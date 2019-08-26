@@ -43,7 +43,9 @@ class DashboardController extends Controller
             return $this->adminDashboard();
         }
 
-        return $this->exam();
+		return redirect()->route('exam.questions.dashboard')
+					->withSuccess('Please select next exam or your exam level finsihed');
+        //return $this->exam();
     }
 	
 	private function exam()

@@ -315,7 +315,9 @@ class AuthController extends Controller
     {
         $socialProviders = config('auth.social.providers');
 		
-		$provinces = ['eastern_cape' => 'Eastern Cape',
+		$provinces = [
+			'0' => 'Select Province',
+			'eastern_cape' => 'Eastern Cape',
 			'free_state' => 'Free State',
 			'cauteng' => 'Gauteng',
 			'kwaZulu_natal' =>  'KwaZulu-Natal', 
