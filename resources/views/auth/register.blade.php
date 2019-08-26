@@ -37,7 +37,7 @@
 							<input type="radio" name="gender" value="female"> Female<br>
 						</div>
 						<div class="form-group">
-							<label for="address">Province</label>
+							<label for="address">Choose a province</label>
 								
 							{!! Form::select('province', $provinces, null, ['class' => 'form-control']) !!}
 						</div>
