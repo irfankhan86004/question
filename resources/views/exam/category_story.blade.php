@@ -40,7 +40,7 @@
 							
 								<h3>{{ $categoriesObj->parentCategory->name }}</h3><br>
 								<h4>{{ $categoriesObj->name }}</h4>
-								<div>{{ $categoriesObj->story }}</div>
+								<div class="custom-control custom-checkbox">{{ $categoriesObj->story }}</div>
 							</div>
 							<a href='{{ route('exam.questions')}}' id='next' class="btn exam_button">Read story and start exam</a>
 						</form>

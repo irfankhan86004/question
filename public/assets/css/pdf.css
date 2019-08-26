@@ -1,0 +1,104 @@
+span.cls_002{
+	font-family:Arial,serif;
+	font-size:20.3px;
+	color:rgb(50,57,108);
+	font-weight:bold;
+	font-style:normal;
+	text-decoration: none;
+}
+div.cls_002{
+	font-family:Arial,serif;
+	font-size:20.3px;
+	color:rgb(50,57,108);
+	font-weight:bold;
+	font-style:normal;
+	text-decoration: none;
+}
+span.cls_003{
+	font-family:"Calibri",serif;
+	font-size:66.1px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:normal;
+	text-decoration: none;
+}
+div.cls_003{
+	font-family:"Calibri",serif;font-size:66.1px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:normal;
+	text-decoration: none;
+}
+span.cls_004{
+	font-family:"Calibri Light",serif;
+	font-size:51.1px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:normal;
+	text-decoration: none;
+}
+div.cls_004{
+	font-family:"Calibri Light",serif;
+	font-size:51.1px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:normal;
+	text-decoration: none;
+}
+span.cls_005{
+	font-family:"Calibri Bold Italic",serif;
+	font-size:102.1px;
+	color:rgb(50,57,108);
+	font-weight:bold;
+	font-style:italic;
+	text-decoration: none;
+}
+div.cls_005{
+	font-family:"Calibri Bold Italic",serif;font-size:102.1px;
+	color:rgb(50,57,108);
+	font-weight:bold;
+	font-style:italic;
+	text-decoration: none;
+}
+span.cls_006{
+	font-family:"Calibri Light",serif;
+	font-size:39.7px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:normal;
+	text-decoration: none;
+}
+div.cls_006{
+	font-family:"Calibri Light",serif;
+	font-size:39.7px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:normal;
+	text-decoration: none;
+}
+span.cls_007{
+	font-family:"Calibri Light Italic",serif;
+	font-size:20.4px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:italic;
+	text-decoration: none;
+}
+div.cls_007{
+	font-family:"Calibri Light Italic",serif;
+	font-size:20.4px;
+	color:rgb(43,42,41);
+	font-weight:normal;
+	font-style:italic;
+	text-decoration: none;
+}
+.mainpdf{
+	position:absolute;
+	left:50%;
+	margin-left:-297px;
+	top:0px;
+	width:595px;
+	height:841px;
+	border-style:outset;
+	overflow:hidden;
+}

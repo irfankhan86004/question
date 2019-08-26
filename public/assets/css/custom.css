@@ -28,7 +28,10 @@
     background-color: #232e6e;
     border-color: #232e6e;
 }
-
+.custom-control.custom-checkbox {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
 @media (max-width: 1600px) and (min-width: 1200px) {
   .widget {
       height: 140px;

@@ -8,14 +8,14 @@
 
 @section('content')
 
-    <div class="col-md-8 col-lg-6 col-xl-5 mx-auto my-10p">
+    <div class="col-md-8 col-lg-6 col-xl-5 mx-auto">
         <div class="text-center">
             <img src="{{ url('assets/img/PLAS_398x159.png') }}" alt="{{ settings('app_name') }}">
         </div>
 
         @include('partials/messages')
 
-        <div class="card mt-5">
+        <div class="card">
             <div class="card-body">
                 <h5 class="card-title text-center mt-4 text-uppercase">
                     @lang('app.register')
