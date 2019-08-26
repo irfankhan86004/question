@@ -47,7 +47,7 @@ div.cls_007{font-family:"Calibri Light Italic",serif;font-size:20.4px;color:rgb(
 <div class="container-fluid">
 	<div class="inner-border">
 	<div class="bg-logo">
-		<img src="{{asset('assets/img/PALS_logo.png')}}" style="width:100%; height:auto" alt='logo' />
+		<img src="{{asset('assets/img/PLAS_250x70.jpg')}}" style="width:100%; height:auto" alt='logo' />
 	</div>
 <div  class="cls_003"><span class="cls_003">dev_first_name</span></div>
 <div class="cls_004"><span class="cls_004">YOUR SCORE</span></div>
