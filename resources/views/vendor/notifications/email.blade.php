@@ -21,7 +21,7 @@ $style = [
     /* Layout ------------------------------ */
 
     'body' => 'margin: 0; padding: 0; width: 100%; background-color: #F2F4F6;',
-    'email-wrapper' => 'width: 100%; margin: 0; padding: 0; background-color: #F2F4F6; border-top: 5px solid #1c8966;',
+    'email-wrapper' => 'width: 100%; margin: 0; padding: 0; background-color: #F2F4F6; border-top: 5px solid #202b6c;',
 
     /* Masthead ----------------------- */
 
@@ -57,7 +57,7 @@ $style = [
     'button--green' => 'background-color: #5cb85c;',
     'button--red' => 'background-color: #dc4d2f;',
     'button--blue' => 'background-color: #3869D4;',
-    'button--default' => 'background-color: #1c8966;'
+    'button--default' => 'background-color: #202b6c;'
 ];
 ?>
 
