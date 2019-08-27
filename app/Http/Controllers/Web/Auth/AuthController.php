@@ -342,6 +342,8 @@ class AuthController extends Controller
     {
         // Determine user status. User's status will be set to UNCONFIRMED
         // if he has to confirm his email or to ACTIVE if email confirmation is not required
+		$birthday = date('Y-m-d',strtotime($request->birthday));
+		
         $status = settings('reg_email_confirmation')
             ? UserStatus::UNCONFIRMED
             : UserStatus::ACTIVE;
@@ -350,8 +352,8 @@ class AuthController extends Controller
 
         // Add the user to database
         $user = $this->users->create(array_merge(
-            $request->only('email', 'name_and_surname', 'password', 'birthday', 'province', 'gender'),
-            ['status' => $status, 'role_id' => $role->id]
+            $request->only('email', 'name_and_surname', 'password', 'province', 'gender'),
+            ['status' => $status, 'role_id' => $role->id, 'birthday' => $birthday]
         ));
 
         event(new Registered($user));

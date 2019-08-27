@@ -17,7 +17,7 @@
         </div>
 		<div class="form-group">
 			<label for="address">Province</label>
-			{!! Form::select('province', $provinces, null, ['class' => 'form-control']) !!}
+			{!! Form::select('province', $provinces, $edit ? $user->province : '', ['class' => 'form-control']) !!}
 		</div>
 		
 		

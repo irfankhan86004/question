@@ -149,9 +149,22 @@ class UsersController extends Controller
         $statuses = UserStatus::lists();
         $socialLogins = $this->users->getUserSocialLogins($user->id);
 
+		$provinces = [
+			'0' => 'Select Province',
+			'eastern_cape' => 'Eastern Cape',
+			'free_state' => 'Free State',
+			'cauteng' => 'Gauteng',
+			'kwaZulu_natal' =>  'KwaZulu-Natal', 
+			'limpopo' => 'Limpopo',
+			'mpumalanga' => 'Mpumalanga',
+			'northern_cape' => 'Northern Cape',
+			'north_west' => 'North West',
+			'western_cape' => 'Western Cape'
+		];
+		
         return view(
             'user.edit',
-            compact('edit', 'user', 'countries', 'socialLogins', 'roles', 'statuses')
+            compact('edit', 'user', 'countries', 'socialLogins', 'roles', 'statuses', 'provinces')
         );
     }
 
