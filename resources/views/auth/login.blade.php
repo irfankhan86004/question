@@ -6,7 +6,7 @@
 
 <div class="col-md-8 col-lg-6 col-xl-5 mx-auto my-10p" id="login">
     <div class="text-center">
-        <img src="{{ url('assets/img/PLAS_398x159.png') }}" alt="{{ settings('app_name') }}">
+        <img src="{{ url('assets/img/new_plas.png') }}" alt="{{ settings('app_name') }}">
     </div>
 
     <div class="card mt-5">
