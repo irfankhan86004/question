@@ -10,7 +10,7 @@
 
     <div class="col-md-8 col-lg-6 col-xl-5 mx-auto">
         <div class="text-center">
-            <img src="{{ url('assets/img/new_plas.png') }}" alt="{{ settings('app_name') }}">
+            <img src="{{ url('assets/img/new_plas.png') }}" alt="{{ settings('app_name') }}" style='width:400px!important;'>
         </div>
 
         @include('partials/messages')

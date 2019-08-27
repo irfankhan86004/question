@@ -2,7 +2,7 @@
 
     <div class="navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand mr-0" href="{{ url('/') }}">
-            <img src="{{ url('assets/img/new_plas.png') }}" alt="{{ settings('app_name') }}">
+            <img src="{{ url('assets/img/new_plas.png') }}" alt="{{ settings('app_name') }}" style='width:250px!important;'>
         </a>
     </div>
 
